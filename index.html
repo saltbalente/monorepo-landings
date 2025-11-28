@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREA - El creador de landing pages más fácil y rápido del mundo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f0f4f8 100%);
+            color: #1a1a1a;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            padding: 20px 0;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        .logo {
+            display: inline-block;
+        }
+        .logo svg {
+            width: 120px;
+            height: 40px;
+        }
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(147, 197, 253, 0.2) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: floatShapes 15s ease-in-out infinite;
+        }
+        .shape-1 {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .shape-2 {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            right: 15%;
+            animation-delay: 5s;
+        }
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            bottom: 15%;
+            left: 20%;
+            animation-delay: 10s;
+        }
+        .shape-4 {
+            width: 40px;
+            height: 40px;
+            bottom: 30%;
+            right: 10%;
+            animation-delay: 7s;
+        }
+        @keyframes floatShapes {
+            0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+            25% { transform: translateY(-20px) translateX(10px) scale(1.1); }
+            50% { transform: translateY(-10px) translateX(-10px) scale(0.9); }
+            75% { transform: translateY(20px) translateX(5px) scale(1.05); }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            text-align: center;
+            color: white;
+            animation: fadeInUp 1.5s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-text {
+            margin-bottom: 40px;
+        }
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.5s ease-out, glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+            to { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.5); }
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1.5s ease-out 0.3s both;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            color: #1e3a8a;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(30, 58, 138, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1.5s ease-out 0.6s both;
+        }
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        .cta-button:focus {
+            outline: 2px solid #1e3a8a;
+            outline-offset: 2px;
+        }
+        .hero-note {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease-out 0.8s both;
+        }
+        .hero-mockup {
+            flex: 1;
+            text-align: center;
+        }
+        .mockup-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            padding: 100px 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+        .problem-solution {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        .problem-solution::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .arrow {
+            font-size: 3rem;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .solution {
+            background: linear-gradient(135deg, #0066ff 0%, #4c63d2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .how-it-works {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            position: relative;
+        }
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill="none" fill-rule="evenodd"><g fill="%231e3a8a" fill-opacity="0.03"><circle cx="30" cy="30" r="2"/></g></svg>');
+            pointer-events: none;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .step {
+            text-align: center;
+        }
+        .step-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .templates {
+            background-color: white;
+        }
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .template-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 200px;
+            background-color: #e0e0e0;
+        }
+        .template-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .template-item:hover .template-overlay {
+            opacity: 1;
+        }
+        .features {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><defs><pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 8 0 L 0 0 0 8" fill="none" stroke="%231e3a8a" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23smallGrid)" /></svg>');
+            pointer-events: none;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .feature {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .pricing {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            position: relative;
+        }
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.02) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        .pricing-card.popular {
+            border-color: #1e3a8a;
+            background: rgba(30, 58, 138, 0.05);
+        }
+        .pricing-card.popular::before {
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+            height: 6px;
+        }
+        .pricing-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .pricing-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        .pricing-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 40px;
+        }
+        .final-cta {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+        .final-cta-title {
+            position: relative;
+            z-index: 1;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .final-cta-button {
+            position: relative;
+            z-index: 1;
+            background: white;
+            color: #1e3a8a;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(30, 58, 138, 0.2);
+        }
+        .final-cta-button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        .final-cta-button:focus {
+            outline: 2px solid #ffffff;
+            outline-offset: 2px;
+        }
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 0;
+                min-height: auto;
+            }
+            .hero-content {
+                max-width: none;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .cta-button {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+            .mockup-image {
+                max-width: 100%;
+            }
+            .section {
+                padding: 60px 0;
+            }
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            .cards, .steps, .template-grid, .features-grid, .pricing-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .card, .pricing-card {
+                padding: 30px;
+            }
+            .step-number {
+                font-size: 3rem;
+            }
+            .template-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .final-cta-title {
+                font-size: 2rem;
+            }
+            .final-cta-button {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .template-grid {
+                grid-template-columns: 1fr;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .cta-button, .final-cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                    <text x="60" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" font-weight="900" fill="#1e3a8a">CREA</text>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Crea landing pages profesionales<br>en menos de 5 minutos</h1>
+                    <p class="hero-subtitle">Sin código. Sin diseñador. Sin complicaciones.</p>
+                    <button class="cta-button">Empezar gratis ahora</button>
+                    <p class="hero-note">Sin tarjeta · Cancelas cuando quieras</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section problem-solution">
+        <div class="container">
+            <h2 class="section-title">Deja de perder tiempo y dinero</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3 class="card-title">Diseñadores caros</h3>
+                    <p>3-4 semanas · Miles de dólares</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Plataformas complicadas</h3>
+                    <p>Curva de aprendizaje eterna</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Plantillas feas</h3>
+                    <p>Todas se ven iguales</p>
+                </div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="solution">
+                Con CREA: 5 minutos y listo
+            </div>
+        </div>
+    </section>
+
+    <section class="section how-it-works">
+        <div class="container">
+            <h2 class="section-title">Cómo funciona</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Elige una plantilla espectacular</h3>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Edita con arrastrar y soltar</h3>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Publica con un clic</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Editor visual drag & drop</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">100% móvil perfecto</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Dominio personalizado gratis</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Estadísticas incluidas</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔗</div>
+                    <h3 class="feature-title">Integraciones (WhatsApp, Pixel, etc.)</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Soporte 24/7 en español</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section pricing">
+        <div class="container">
+            <h2 class="section-title">Precios simples y transparentes</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Básico</h3>
+                    <p class="pricing-price">$9/mes</p>
+                </div>
+                <div class="pricing-card popular">
+                    <h3 class="pricing-title">Pro</h3>
+                    <p class="pricing-price">$29/mes</p>
+                    <p>Más popular</p>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Agencia</h3>
+                    <p class="pricing-price">$79/mes</p>
+                </div>
+            </div>
+            <p class="pricing-note">Todos los planes incluyen 14 días gratis</p>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="cta-button">Empezar gratis ahora</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="final-cta-title">¿Listo para tener tu landing profesional hoy mismo?</h2>
+            <button class="final-cta-button">Crear mi primera landing gratis</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 CREA • Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
