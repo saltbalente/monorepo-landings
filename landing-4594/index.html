@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curandero Experto en Consulta Gratis en {LOCATION(City)}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/saltbalente/monorepo-landings@main/static/favicon.svg">
+
+  <!-- SEO -->
+  <meta name="description" content="Descubre la sanación emocional y espiritual con un curandero experto. Consulta gratuita disponible para ayudarte a resolver problemas de amor, salud o dinero." />
+  <meta name="keywords" content="Curandero, limpia espiritual, curandero, sanación energética, quitar brujería, eliminar daño, mal de ojo, sahumerio, baño de descarga" />
+  <meta property="og:title" content="Curandero Experto en Consulta Gratis en {LOCATION(City)}" />
+  <meta property="og:description" content="Descubre la sanación emocional y espiritual con un curandero experto. Consulta gratuita disponible para ayudarte a resolver problemas de amor, salud o dinero." />
+  <meta property="og:type" content="website" />
+
+  <!-- Schema.org Local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Curandero en Consulta Gratis",
+    "description": "Descubre la sanación emocional y espiritual con un curandero experto. Consulta gratuita disponible para ayudarte a resolver problemas de amor, salud o dinero.",
+    "telephone": "+17606662274",
+    "priceRange": "$$",
+    "serviceType": "Limpias espirituales, curanderismo y sanación energética",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "360"
+    }
+  }
+  </script>
+
+  <!-- Fuentes místicas pero más sanadoras -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mystical: ['Cinzel', 'serif'],
+            elegant: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          },
+          colors: {
+            primary: '#064e3b',    // verde esmeralda profundo (sanación)
+            secondary: '#78350f',  // ámbar oscuro (protección)
+            accent: '#6b21a8',     // violeta sanador
+            background: '#0f172a', // fondo casi negro
+            surface: '#1e293b',
+            text: '#e2e8f0',
+            textSecondary: '#94a3b8',
+            healer: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',   // verde esmeralda principal
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b'
+            },
+            amber: {
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              900: '#78350f'
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
+            'shimmer': 'shimmer 8s linear infinite',
+            'fade-in': 'fade-in 1s ease-out forwards'
+          },
+          keyframes: {
+            float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } },
+            'pulse-glow': { '0%, 100%': { opacity: '0.6', boxShadow: '0 0 20px rgba(16, 185, 129, 0.3)' }, '50%': { opacity: '1', boxShadow: '0 0 50px rgba(16, 185, 129, 0.6)' } },
+            shimmer: { '0%': { backgroundPosition: '-1000px 0' }, '100%': { backgroundPosition: '1000px 0' } },
+            'fade-in': { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+  <style>
+    .healer-gradient {
+      background: linear-gradient(135deg, #0f172a 0%, #022c22 50%, #1e3a8a 100%);
+    }
+    .particle-bg {
+      background-image:
+        radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.15) 0%, transparent 50%);
+    }
+    .crystal-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .rune-divider {
+      background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.6), transparent);
+      height: 1px;
+      position: relative;
+    }
+    .rune-divider::before {
+      content: '✞';
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      background: #0f172a;
+      padding: 0 1rem;
+      font-size: 1.4rem;
+      color: #10b981;
+    }
+    .wa-pulse { animation: pulse-wa 2s infinite; }
+    @keyframes pulse-wa {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      50% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+    }
+  </style>
+
+<!-- 🔌 WIDGETS CSS START -->
+<style id="widgets-injected-css">
+
+/* 🛡️ WIDGETS PRIORITY CSS - Always visible */
+.wa-sticky-bar, .vibrating-wa-btn, .scroll-popup-overlay, 
+.live-consults-container, .typing-indicator {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+#widgets-container {
+    display: block !important;
+    visibility: visible !important;
+}
+
+
+/* Sticky Bars Widget - Ultra High Priority */
+.wa-sticky-bar {
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 2147483647 !important; /* Max z-index */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    padding: 10px 16px !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+    transition: transform 0.3s ease !important;
+}
+.wa-sticky-top { top: 0 !important; }
+.wa-sticky-bottom { bottom: 0 !important; }
+.wa-sticky-text { font-size: 14px !important; font-weight: 600 !important; }
+.wa-sticky-btn {
+    padding: 8px 20px !important;
+    border-radius: 25px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+.wa-sticky-btn:hover { transform: scale(1.05) !important; }
+.wa-sticky-status {
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+    border-radius: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+}
+.wa-sticky-status .dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    animation: pulse 1.5s infinite !important;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+@media (max-width: 640px) {
+    .wa-sticky-bar { flex-wrap: wrap !important; padding: 8px 12px !important; gap: 8px !important; }
+    .wa-sticky-text { font-size: 12px !important; }
+    .wa-sticky-btn { padding: 6px 14px !important; font-size: 12px !important; }
+}
+
+.wa-sticky-bar { background: linear-gradient(135deg, #128C7E, #075E54); }
+.wa-sticky-text { color: white; }
+.wa-sticky-btn { background: #25D366; color: white; }
+.wa-sticky-status { background: rgba(37,211,102,0.2); color: #dcfce7; }
+.wa-sticky-status .dot { background: #25D366; }
+
+
+/* Live Questions Widget */
+.live-questions-section {
+    padding: 40px 20px;
+    background: linear-gradient(180deg, rgba(139,92,246,0.1) 0%, transparent 100%);
+}
+.live-questions-container { max-width: 800px; margin: 0 auto; }
+.live-questions-title {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 30px;
+}
+.live-question-item {
+    background: rgba(30,27,75,0.8);
+    border: 1px solid rgba(139,92,246,0.3);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.live-question-q {
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #e0e7ff;
+    font-weight: 600;
+}
+.live-question-q:hover { background: rgba(139,92,246,0.1); }
+.live-question-a {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: #a78bfa;
+}
+.live-question-item.open .live-question-a { max-height: 200px; padding: 16px 20px; }
+.live-question-item.open .live-question-arrow { transform: rotate(180deg); }
+.live-question-arrow { transition: transform 0.3s; }
+
+.live-questions-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.live-question-item { height: 100%; }
+.live-question-a { max-height: none !important; padding: 16px 20px !important; }
+
+
+/* Hypnotic Texts Widget */
+.hypnotic-section {
+    padding: 60px 20px;
+    background: linear-gradient(180deg, rgba(139,92,246,0.15) 0%, transparent 100%);
+    text-align: center;
+}
+.hypnotic-container { max-width: 800px; margin: 0 auto; }
+.hypnotic-message {
+    font-size: 1.5rem;
+    color: #c4b5fd;
+    font-style: italic;
+    padding: 20px 30px;
+    background: rgba(30,27,75,0.5);
+    border-left: 4px solid #8b5cf6;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+.hypnotic-message:nth-child(1) { animation-delay: 0.2s; }
+.hypnotic-message:nth-child(2) { animation-delay: 0.5s; }
+.hypnotic-message:nth-child(3) { animation-delay: 0.8s; }
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 640px) {
+    .hypnotic-message { font-size: 1.1rem; padding: 15px 20px; }
+}
+
+</style>
+<!-- 🔌 WIDGETS CSS END -->
+
+<style id="premium-popups-css">
+/* 🎯 PREMIUM POPUPS - Base Styles */
+.premium-popup {
+    position: fixed;
+    z-index: 2147483647;
+    display: none;
+    animation: premiumFadeIn 0.3s ease-out;
+}
+
+.premium-popup.active {
+    display: flex !important;
+}
+
+.premium-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 2147483646;
+}
+
+.premium-popup-content {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: premiumSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.premium-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #333;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.premium-popup-close:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: rotate(90deg);
+}
+
+.premium-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #8B5CF6;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.premium-btn:hover {
+    background: #6B46C1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+@keyframes premiumFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes premiumSlideUp {
+    from { transform: translateY(50px) scale(0.9); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes premiumPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes premiumShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .premium-popup-content {
+        max-width: 95%;
+        border-radius: 15px;
+    }
+    
+    .premium-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body class="bg-background text-text font-sans antialiased overflow-x-hidden">
+
+  <!-- Navegación -->
+  <nav class="fixed w-full z-50 transition-all duration-500 backdrop-blur-md"
+    x-data="{ scrolled: false, mobileMenu: false }" @scroll.window="scrolled = (window.pageYOffset > 20)"
+    :class="scrolled ? 'bg-background/95 shadow-2xl shadow-healer-900/30 py-3' : 'bg-transparent py-6'">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <div class="font-mystical text-2xl tracking-wider">
+          <span class="text-healer-400">✞</span>
+          <span class="text-secondary mx-2">Curandero</span>
+          <span class="text-healer-400">✞</span>
+        </div>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:flex items-center gap-5">
+          <a href="tel:+17606662274" class="flex items-center gap-2 px-5 py-3 rounded-xl border border-healer-600/40 text-healer-300 hover:bg-healer-900/50 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +17606662274
+          </a>
+          <a href="https://wa.me/17606662274" class="flex items-center gap-3 px-6 py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl shadow-xl shadow-green-900/50 transition-all hover:scale-105">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"> <!-- icono whatsapp --> </svg>
+            WhatsApp
+          </a>
+        </div>
+        <!-- móvil menú -->
+        <button @click="mobileMenu = !mobileMenu" class="md:hidden text-healer-400"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+      <!-- Menú móvil -->
+      <div x-show="mobileMenu" x-transition class="md:hidden mt-4 space-y-4 pb-4">
+        <a href="tel:+17606662274" class="flex items-center justify-center gap-3 py-4 border border-healer-600/40 rounded-xl text-healer-300">Llamar +17606662274</a>
+        <a href="https://wa.me/17606662274" class="flex items-center justify-center gap-3 py-4 bg-green-600 text-white font-bold rounded-xl">WhatsApp ahora</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center justify-center healer-gradient particle-bg overflow-hidden pt-20">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 left-10 w-3 h-3 bg-healer-400 rounded-full animate-float opacity-70"></div>
+      <div class="absolute top-1/3 right-20 w-4 h-4 bg-amber-600 rounded-full animate-float opacity-50" style="animation-delay: 1.5s"></div>
+      <div class="absolute bottom-40 left-1/3 w-2 h-2 bg-healer-300 rounded-full animate-float opacity-60" style="animation-delay: 2.5s"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+      <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-healer-900/60 border border-healer-500/40 backdrop-blur-sm mb-8">
+        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+        <span class="text-sm font-medium text-healer-200">Disponible 24 horas • +360 limpias realizadas</span>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-mystical font-bold text-white mb-6 leading-tight">
+        Curandero en Consulta Gratis
+      </h1>
+
+      <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-4xl mx-auto font-elegant leading-relaxed">
+        Recupera tu bienestar espiritual y emocional hoy mismo
+      </p>
+
+      <!-- CTAs Hero -->
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="https://wa.me/17606662274?text=Hola,%20necesito%20una%20limpia%20urgente" class="group relative inline-flex items-center gap-4 px-10 py-5 bg-green-600 hover:bg-green-500 text-white text-xl font-bold rounded-2xl shadow-2xl shadow-green-900/60 transition-all hover:scale-105 wa-pulse">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"> <!-- whatsapp --> </svg>
+          <span>Solicitar Limpia por WhatsApp</span>
+        </a>
+        <a href="tel:+17606662274" class="inline-flex items-center gap-4 px-10 py-5 border-2 border-healer-400 hover:bg-healer-900/50 text-healer-300 text-xl font-bold rounded-2xl transition-all hover:scale-105">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Llamar Ahora
+        </a>
+      </div>
+
+      <div class="flex justify-center gap-8 mt-12 text-gray-400 text-sm">
+        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-healer-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Respuesta inmediata 24/7</div>
+        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> 4.9/5 • +360 casos resueltos</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="py-20 bg-surface/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="rune-divider max-w-xs mx-auto mb-8"></div>
+      <h2 class="text-4xl md:text-5xl font-mystical text-healer-300 mb-6">¿En qué puedo ayudarte?</h2>
+      <p class="text-xl text-gray-400 mb-16 max-w-3xl mx-auto font-elegant">Limpio y protejo con la sabiduría de mis mayores</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        
+        <div class="crystal-card p-8 rounded-2xl hover:border-healer-500/50 transition-all hover:-translate-y-3 group">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-gradient-to-br from-healer-600 to-healer-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="text-2xl">✞</span>
+          </div>
+          <p class="text-gray-300 leading-relaxed">Quitar brujería y trabajos negros</p>
+        </div>
+        
+        <div class="crystal-card p-8 rounded-2xl hover:border-healer-500/50 transition-all hover:-translate-y-3 group">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-gradient-to-br from-healer-600 to-healer-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="text-2xl">✞</span>
+          </div>
+          <p class="text-gray-300 leading-relaxed">Eliminar mal de ojo y envidias</p>
+        </div>
+        
+        <div class="crystal-card p-8 rounded-2xl hover:border-healer-500/50 transition-all hover:-translate-y-3 group">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-gradient-to-br from-healer-600 to-healer-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="text-2xl">✞</span>
+          </div>
+          <p class="text-gray-300 leading-relaxed">Limpias con huevo, hierbas y sahumerio</p>
+        </div>
+        
+        <div class="crystal-card p-8 rounded-2xl hover:border-healer-500/50 transition-all hover:-translate-y-3 group">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-gradient-to-br from-healer-600 to-healer-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="text-2xl">✞</span>
+          </div>
+          <p class="text-gray-300 leading-relaxed">Baños de descarga y florecimiento</p>
+        </div>
+        
+        <div class="crystal-card p-8 rounded-2xl hover:border-healer-500/50 transition-all hover:-translate-y-3 group">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-gradient-to-br from-healer-600 to-healer-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="text-2xl">✞</span>
+          </div>
+          <p class="text-gray-300 leading-relaxed">Protección energética permanente</p>
+        </div>
+        
+        <div class="crystal-card p-8 rounded-2xl hover:border-healer-500/50 transition-all hover:-translate-y-3 group">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-gradient-to-br from-healer-600 to-healer-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="text-2xl">✞</span>
+          </div>
+          <p class="text-gray-300 leading-relaxed">Abrir caminos de prosperidad</p>
+        </div>
+        
+        <div class="crystal-card p-8 rounded-2xl hover:border-healer-500/50 transition-all hover:-translate-y-3 group">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-gradient-to-br from-healer-600 to-healer-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="text-2xl">✞</span>
+          </div>
+          <p class="text-gray-300 leading-relaxed">Sanación de cuerpo, mente y espíritu</p>
+        </div>
+        
+        <div class="crystal-card p-8 rounded-2xl hover:border-healer-500/50 transition-all hover:-translate-y-3 group">
+          <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-gradient-to-br from-healer-600 to-healer-800 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="text-2xl">✞</span>
+          </div>
+          <p class="text-gray-300 leading-relaxed">Liberación de energías estancadas</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Resto de secciones (testimonios, formulario, CTA final, footer, botón flotante WhatsApp…) -->
+  <!-- Mantengo la misma estructura que tenías, solo cambio colores y textos clave -->
+
+  <!-- Testimonios -->
+  <section class="py-20 healer-gradient particle-bg">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="rune-divider max-w-xs mx-auto mb-8"></div>
+      <h2 class="text-4xl md:text-5xl font-mystical text-white mb-6">Ellos ya cambiaron su vida</h2>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        
+        <div class="crystal-card p-8 rounded-2xl">
+          <p class="text-gray-300 italic mb-6 font-elegant">"Gracias a este curandero, recuperé la paz en mi vida. ¡Altamente recomendado!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-healer-600 to-amber-700 flex items-center justify-center text-2xl">✞</div>
+            <div><div class="font-semibold text-white">Cliente agradecido</div><div class="text-sm text-amber-400">★★★★★</div></div>
+          </div>
+        </div>
+        
+        <div class="crystal-card p-8 rounded-2xl">
+          <p class="text-gray-300 italic mb-6 font-elegant">"La consulta fue reveladora y transformadora. No puedo creer lo bien que me siento ahora."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-healer-600 to-amber-700 flex items-center justify-center text-2xl">✞</div>
+            <div><div class="font-semibold text-white">Cliente agradecido</div><div class="text-sm text-amber-400">★★★★★</div></div>
+          </div>
+        </div>
+        
+        <div class="crystal-card p-8 rounded-2xl">
+          <p class="text-gray-300 italic mb-6 font-elegant">"Un verdadero experto en su campo. Me ayudó a superar mis problemas de amor y salud."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-healer-600 to-amber-700 flex items-center justify-center text-2xl">✞</div>
+            <div><div class="font-semibold text-white">Cliente agradecido</div><div class="text-sm text-amber-400">★★★★★</div></div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-20 healer-gradient">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-5xl md:text-6xl font-mystical text-white mb-8">No sigas cargando ese peso</h2>
+      <p class="text-2xl text-gray-300 mb-12 font-elegant">La solución está a un mensaje de distancia</p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="https://wa.me/17606662274?text=Hola,%20necesito%20una%20limpia%20espIRITUAL%20urgente" class="px-12 py-6 bg-green-600 hover:bg-green-500 text-white text-xl font-bold rounded-2xl shadow-2xl wa-pulse transition-all hover:scale-105">
+          Solicitar Limpia por WhatsApp
+        </a>
+        <a href="tel:+17606662274" class="px-12 py-6 border-2 border-healer-400 text-healer-300 text-xl font-bold rounded-2xl hover:bg-healer-900/50 transition-all hover:scale-105">
+          Llamar Ahora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botón flotante WhatsApp móvil -->
+  <a href="https://wa.me/17606662274?text=Hola,%20quiero%20una%20limpia" class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-green-600 hover:bg-green-500 text-white rounded-full shadow-2xl flex items-center justify-center text-3xl wa-pulse lg:hidden">
+    <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24"> <!-- icono whatsapp --> </svg>
+  </a>
+
+<!-- 🔌 WIDGETS HTML START -->
+<div id="widgets-container">
+
+<!-- Sticky Bar Top -->
+<div class="wa-sticky-bar wa-sticky-top">
+    <span class="wa-sticky-text">💬 💬 ¡Consulta GRATIS ahora mismo!</span>
+    <span class="wa-sticky-status"><span class="dot"></span> En línea</span>
+    <a href="https://wa.me/17606662274?text=Hola%2C%20quiero%20informaci%C3%B3n" class="wa-sticky-btn" target="_blank">📱 WhatsApp</a>
+</div>
+<!-- Sticky Bar Bottom -->
+<div class="wa-sticky-bar wa-sticky-bottom">
+    <span class="wa-sticky-text">⚡ Respuesta inmediata garantizada</span>
+    <a href="https://wa.me/17606662274?text=Hola%2C%20quiero%20informaci%C3%B3n" class="wa-sticky-btn" target="_blank">💬 Consulta Ahora</a>
+</div>
+
+
+<!-- Live Questions Section -->
+<section class="live-questions-section">
+    <div class="live-questions-container">
+        <h2 class="live-questions-title">🔮 Preguntas Frecuentes</h2>
+        
+<div class="live-question-item" data-q="0">
+    <div class="live-question-q" onclick="this.parentElement.classList.toggle('open')">
+        <span>¿Cuánto tiempo tardan los resultados?</span>
+        <span class="live-question-arrow">▼</span>
+    </div>
+    <div class="live-question-a">Los primeros efectos se sienten en 24-48 horas.</div>
+</div>
+
+<div class="live-question-item" data-q="1">
+    <div class="live-question-q" onclick="this.parentElement.classList.toggle('open')">
+        <span>¿Es 100% confidencial?</span>
+        <span class="live-question-arrow">▼</span>
+    </div>
+    <div class="live-question-a">Absolutamente. Tu privacidad es sagrada para nosotros.</div>
+</div>
+
+<div class="live-question-item" data-q="2">
+    <div class="live-question-q" onclick="this.parentElement.classList.toggle('open')">
+        <span>¿Funcionará en mi caso?</span>
+        <span class="live-question-arrow">▼</span>
+    </div>
+    <div class="live-question-a">Cada situación es única. Consulta gratis para evaluación.</div>
+</div>
+
+    </div>
+</section>
+
+
+<!-- Hypnotic Texts Section -->
+<section class="hypnotic-section">
+    <div class="hypnotic-container">
+        <div class="hypnotic-message">"Tu destino está a punto de cambiar..."</div>
+<div class="hypnotic-message">"Las energías se están alineando a tu favor..."</div>
+<div class="hypnotic-message">"El universo conspira para tu felicidad..."</div>
+
+    </div>
+</section>
+
+</div>
+<!-- 🔌 WIDGETS HTML END -->
+
+<!-- 🔌 WIDGETS JS START -->
+<script id="widgets-injected-js">
+
+(function() {
+    'use strict';
+    
+    // 🛡️ SISTEMA DE RETRY AUTOMÁTICO
+    var MAX_RETRIES = 3;
+    var RETRY_DELAY = 1000;
+    
+    function safeExecute(fn, name, retryCount) {
+        retryCount = retryCount || 0;
+        try {
+            fn();
+            console.log('✅ Widget loaded: ' + name);
+        } catch(e) {
+            console.warn('⚠️ Widget error (' + name + '):', e);
+            if (retryCount < MAX_RETRIES) {
+                console.log('🔄 Retrying ' + name + ' in ' + RETRY_DELAY + 'ms...');
+                setTimeout(function() {
+                    safeExecute(fn, name, retryCount + 1);
+                }, RETRY_DELAY);
+            }
+        }
+    }
+    
+    // 🛡️ VERIFICAR QUE EL DOM ESTÁ LISTO
+    function whenReady(callback) {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', callback);
+        } else {
+            callback();
+        }
+    }
+    
+    // 🛡️ INICIALIZACIÓN PRINCIPAL
+    whenReady(function() {
+        console.log('🔌 Inicializando widgets...');
+        
+        // Pequeño delay para asegurar que todo está cargado
+        setTimeout(function() {
+            
+
+        }, 200);
+    });
+    
+    // 🛡️ BACKUP: También ejecutar en window.load
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            // Re-verificar que los widgets están visibles
+            var containers = document.querySelectorAll('[class*="wa-sticky"], [class*="vibrating"], [class*="scroll-popup"]');
+            if (containers.length === 0) {
+                console.warn('⚠️ Widgets no encontrados, reinyectando...');
+                // Los widgets se reinyectarán por el sistema de fallback
+            }
+        }, 1000);
+    });
+})();
+
+</script>
+<!-- 🔌 WIDGETS JS END -->
+
+<script id="premium-popups-js">
+(function() {
+    'use strict';
+    
+    const POPUP_IDS = ["exit_mystic_portal"];
+    const WHATSAPP = '+17606662274';
+    
+    // 🎯 Control de popups
+    let popupsShown = new Set();
+    let currentPopup = null;
+    
+    // Cerrar popup
+    window.closePremiumPopup = function(id) {
+        const popup = document.getElementById('premium-popup-' + id);
+        if (popup) {
+            popup.classList.remove('active');
+            popupsShown.add(id);
+            currentPopup = null;
+        }
+    };
+    
+    // Mostrar popup
+    function showPopup(id) {
+        if (popupsShown.has(id) || currentPopup) return;
+        
+        const popup = document.getElementById('premium-popup-' + id);
+        if (popup) {
+            popup.classList.add('active');
+            currentPopup = id;
+            
+            // Ejecutar lógica específica del popup
+            if (id === 'urgency-timer') startUrgencyTimer();
+            if (id === 'social-proof') animateSocialProof();
+            if (id === 'notification-stack') startNotifications();
+            if (id === 'floating-cta') showFloatingCTA();
+        }
+    }
+    
+    // ⏰ Temporizador de urgencia
+    function startUrgencyTimer() {
+        const endTime = Date.now() + (2 * 60 * 60 * 1000); // 2 horas
+        
+        function updateTimer() {
+            const now = Date.now();
+            const diff = Math.max(0, endTime - now);
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            const h = document.getElementById('urgency-hours');
+            const m = document.getElementById('urgency-minutes');
+            const s = document.getElementById('urgency-seconds');
+            
+            if (h) h.textContent = String(hours).padStart(2, '0');
+            if (m) m.textContent = String(minutes).padStart(2, '0');
+            if (s) s.textContent = String(seconds).padStart(2, '0');
+            
+            if (diff > 0) {
+                setTimeout(updateTimer, 1000);
+            }
+        }
+        
+        updateTimer();
+    }
+    
+    // 👥 Animar prueba social
+    function animateSocialProof() {
+        const el = document.getElementById('social-visitors');
+        if (!el) return;
+        
+        let count = 2847;
+        setInterval(() => {
+            count += Math.floor(Math.random() * 5);
+            el.textContent = count.toLocaleString();
+        }, 5000);
+    }
+    
+    // 🎡 Girar ruleta
+    window.spinWheel = function() {
+        const wheel = document.getElementById('fortune-wheel');
+        const btn = document.getElementById('spin-btn');
+        const result = document.getElementById('wheel-result');
+        const claimBtn = document.getElementById('claim-prize-btn');
+        
+        if (!wheel || !btn) return;
+        
+        btn.disabled = true;
+        btn.style.opacity = '0.5';
+        
+        const spins = 5 + Math.random() * 3;
+        const degrees = (spins * 360) + (Math.random() * 360);
+        wheel.style.transform = `rotate(${degrees}deg)`;
+        
+        setTimeout(() => {
+            if (result) result.style.display = 'block';
+            if (claimBtn) {
+                claimBtn.style.display = 'inline-block';
+                btn.style.display = 'none';
+            }
+        }, 4000);
+    };
+    
+    // 📝 Quiz
+    window.nextQuizQuestion = function(num) {
+        document.querySelectorAll('.quiz-question').forEach(q => q.style.display = 'none');
+        const next = document.getElementById('quiz-question-' + num);
+        if (next) next.style.display = 'block';
+        
+        const bar = document.getElementById('quiz-bar');
+        if (bar) bar.style.width = (num * 33) + '%';
+    };
+    
+    window.showQuizResult = function() {
+        document.querySelectorAll('.quiz-question').forEach(q => q.style.display = 'none');
+        const result = document.getElementById('quiz-result');
+        if (result) result.style.display = 'block';
+        
+        const bar = document.getElementById('quiz-bar');
+        if (bar) bar.style.width = '100%';
+    };
+    
+    // 🔔 Notificaciones
+    function startNotifications() {
+        const container = document.getElementById('premium-popup-notification-stack');
+        if (!container) return;
+        
+        const notifications = [
+            { name: 'María G.', city: 'Bogotá', action: 'acaba de consultar' },
+            { name: 'Carlos R.', city: 'Medellín', action: 'recibió su lectura' },
+            { name: 'Ana L.', city: 'Cali', action: 'confirmó su cita' },
+            { name: 'José M.', city: 'Barranquilla', action: 'está en consulta' },
+        ];
+        
+        let index = 0;
+        
+        function showNotification() {
+            const notif = notifications[index % notifications.length];
+            index++;
+            
+            const el = document.createElement('div');
+            el.style.cssText = 'background: white; padding: 15px 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 15px; animation: premiumSlideUp 0.3s ease-out;';
+            el.innerHTML = `
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #8B5CF6, #6B46C1); flex-shrink: 0;"></div>
+                <div style="flex: 1;">
+                    <div style="font-weight: bold; color: #333; font-size: 14px;">${notif.name} - ${notif.city}</div>
+                    <div style="color: #666; font-size: 13px;">${notif.action}</div>
+                </div>
+            `;
+            
+            container.appendChild(el);
+            
+            setTimeout(() => {
+                el.style.animation = 'premiumFadeOut 0.3s ease-out';
+                setTimeout(() => el.remove(), 300);
+            }, 5000);
+            
+            setTimeout(showNotification, 8000 + Math.random() * 4000);
+        }
+        
+        showNotification();
+    }
+    
+    // 💬 CTA Flotante
+    function showFloatingCTA() {
+        const cta = document.getElementById('premium-popup-floating-cta');
+        if (cta) {
+            setTimeout(() => {
+                cta.style.display = 'block';
+            }, 3000);
+        }
+    }
+    
+    // 🎯 Estrategia de activación
+    function activatePopups() {
+        if (!POPUP_IDS || POPUP_IDS.length === 0) return;
+        
+        // Exit Intent
+        if (POPUP_IDS.includes('exit_intent')) {
+            let hasExited = false;
+            document.addEventListener('mouseleave', (e) => {
+                if (e.clientY < 10 && !hasExited) {
+                    hasExited = true;
+                    showPopup('exit-intent');
+                }
+            });
+        }
+        
+        // Welcome Mat (inmediato)
+        if (POPUP_IDS.includes('welcome_mat')) {
+            setTimeout(() => showPopup('welcome-mat'), 1000);
+        }
+        
+        // Urgency Timer (5 segundos)
+        if (POPUP_IDS.includes('urgency_timer')) {
+            setTimeout(() => showPopup('urgency-timer'), 5000);
+        }
+        
+        // Flash Offer (10 segundos)
+        if (POPUP_IDS.includes('flash_offer')) {
+            setTimeout(() => showPopup('flash-offer'), 10000);
+        }
+        
+        // Social Proof (15 segundos)
+        if (POPUP_IDS.includes('social_proof')) {
+            setTimeout(() => showPopup('social-proof'), 15000);
+        }
+        
+        // Wheel Fortune (20 segundos)
+        if (POPUP_IDS.includes('wheel_fortune')) {
+            setTimeout(() => showPopup('wheel-fortune'), 20000);
+        }
+        
+        // Quiz Lead (25 segundos)
+        if (POPUP_IDS.includes('quiz_lead')) {
+            setTimeout(() => showPopup('quiz-lead'), 25000);
+        }
+        
+        // Video Popup (30 segundos)
+        if (POPUP_IDS.includes('video_popup')) {
+            setTimeout(() => showPopup('video'), 30000);
+        }
+        
+        // Floating CTA (scroll 50%)
+        if (POPUP_IDS.includes('floating_cta')) {
+            let shown = false;
+            window.addEventListener('scroll', () => {
+                if (shown) return;
+                const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                if (scrolled > 50) {
+                    shown = true;
+                    showFloatingCTA();
+                }
+            });
+        }
+        
+        // Notification Stack (inmediato si está incluido)
+        if (POPUP_IDS.includes('notification_stack')) {
+            startNotifications();
+        }
+    }
+    
+    // Iniciar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', activatePopups);
+    } else {
+        activatePopups();
+    }
+    
+    console.log('🎯 Premium Popups loaded:', POPUP_IDS.length, 'popups');
+})();
+</script>
+</body>
+</html>
