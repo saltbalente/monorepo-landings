@@ -22,55 +22,7 @@
 <link rel="dns-prefetch" href="//raw.githubusercontent.com">
 
 <!-- Fuentes críticas (solo las que usas) -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Crimson+Text:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Crimson+Text:wght@400;600&display=swap"></noscript>
-
-<!-- Imágenes críticas del hero (la que más se ve primero) -->
-<link rel="preload" as="image" href="https://raw.githubusercontent.com/saltbalente/cloned-websites/main/grok_image_x6lo1w3.jpg">
-<link rel="preload" as="video" href="https://raw.githubusercontent.com/saltbalente/cloned-websites/main/grok_video_2025-12-05-04-10-23.mp4" type="video/mp4">
-
-<!-- CSS crítico inline (ya lo tienes) + defer de scripts externos -->
-<script>
-// Elimina el blocking render de Google Fonts y Font Awesome
-document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll('link[rel="stylesheet"]');
-    links.forEach(link => {
-        link.rel = "stylesheet";
-    });
-});
-
-// Pre-conexión rápida a WhatsApp (abre más rápido el chat)
-const waLink = document.createElement('link');
-waLink.rel = 'preconnect';
-waLink.href = 'https://wa.me';
-document.head.appendChild(waLink);
-</script>
-
-<!-- Pequeño script de optimización (solo 1 KB) -->
-<script defer>
-// Lazy load de imágenes y videos que ya tienes con loading="lazy" (refuerzo)
-document.addEventListener("DOMContentLoaded", function() {
-    const lazyImages = document.querySelectorAll('img[loading="lazy"], video[loading="lazy"]');
-    if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    el.src = el.dataset.src || el.src;
-                    el.srcset && (el.srcset = el.dataset.srcset || el.srcset);
-                    observer.unobserve(el);
-                }
-            });
-        });
-        lazyImages.forEach(img => observer.observe(img));
-    }
-});
-
-// Desactivar animaciones pesadas en móviles lentos
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || navigator.connection?.saveData) {
-    document.documentElement.classList.add('reduced-motion');
-}
-</script>
+<
     <style>
     /* ANIMACIÓN WHATSAPP PREMIUM - VERDE INTENSO A OSCURO EN BUCLE */
 @keyframes whatsappPulseGlow {
