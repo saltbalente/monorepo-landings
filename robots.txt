@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Host: consultadebrujosgratis.store
+Sitemap: https://consultadebrujosgratis.store/sitemap-index.xml
+Sitemap: https://consultadebrujosgratis.store/sitemap.xml
+Sitemap: https://consultadebrujosgratis.store/sitemap-images.xml

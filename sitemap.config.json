@@ -1,0 +1,10 @@
+{
+  "siteUrl": "https://consultadebrujosgratis.store",
+  "excludePathPatterns": [
+    "^base2/",
+    "^base3/",
+    "^index/index\\.html$",
+    "template_amp\\.html$",
+    "-v2-"
+  ]
+}
