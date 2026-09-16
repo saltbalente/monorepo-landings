@@ -5,3 +5,5 @@ Host: consultadebrujosgratis.store
 Sitemap: https://consultadebrujosgratis.store/sitemap-index.xml
 Sitemap: https://consultadebrujosgratis.store/sitemap.xml
 Sitemap: https://consultadebrujosgratis.store/sitemap-images.xml
+
+Sitemap: https://consultadebrujosgratis.store/sitemap-blog.xml
